@@ -1,84 +1,157 @@
-body {
-    background-color: #2F3242;
-  }
-  svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -250px;
-    margin-left: -400px;
-  }
-  .message-box {
-    height: 200px;
-    width: 380px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: 50px;
-    color: #FFF;
-    font-family: Roboto;
-    font-weight: 300;
-  }
-  .message-box h1 {
-    font-size: 60px;
-    line-height: 46px;
-    margin-bottom: 40px;
-  }
-  .buttons-con .action-link-wrap {
-    margin-top: 40px;
-  }
-  .buttons-con .action-link-wrap a {
-    background: #68c950;
-    padding: 8px 25px;
-    border-radius: 4px;
-    color: #FFF;
-    font-weight: bold;
-    font-size: 14px;
-    transition: all 0.3s linear;
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: 'Poppins';
+ }
+
+ :root{
+  --bg-color: #080808;
+  --second-bg-color: #101010;
+  --text-color: #fff;
+  --main-color: #ea580c;
+ }
+
+ html{
+  font-size: 60%;
+  overflow-x: hidden;
+ }
+
+
+ body{
+  background-color: var(--bg-color);
+  color: var(--text-color);
+ }
+
+ header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 4em 15%;
+  background-color:rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+ }
+
+ #menu-icon{
+  font-size: 3.5rem;
+  color: var(--main-color);
+  display: none;
+ }
+
+ .logo{
+  font-size: 3rem;
+  color: var(--text-color);
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3 ease-in-out;
+  font-family: 'MycustomFont';
+ }
+
+ .logo:hover{
+    transform: scale(1.1);
+ }
+
+ span{
+    background: linear-gradient(
+        270deg,
+        #df8908 10%,
+        #ff1d15 100%
+    );
+    background-clip: text;
+    color: transparent;
+    font-family: 'logoFont';
+ }
+
+ .navbar a{
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3 ease-in-out;
+    border-bottom: 3px solid transparent;
+ }
+
+ .navbar a:hover{
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+ }
+
+ .gradient-button{
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    background: linear-gradient(
+        270deg,
+        #df8908 10%,
+        #ff1d15 100%
+    );  
+    letter-spacing: 1px;
     cursor: pointer;
-    text-decoration: none;
-    margin-right: 10px
-  }
-  .buttons-con .action-link-wrap a:hover {
-    background: #5A5C6C;
-    color: #fff;
-  }
-  
-  #Polygon-1 , #Polygon-2 , #Polygon-3 , #Polygon-4 , #Polygon-4, #Polygon-5 {
-    animation: float 1s infinite ease-in-out alternate;
-  }
-  #Polygon-2 {
-    animation-delay: .2s; 
-  }
-  #Polygon-3 {
-    animation-delay: .4s; 
-  }
-  #Polygon-4 {
-    animation-delay: .6s; 
-  }
-  #Polygon-5 {
-    animation-delay: .8s; 
-  }
-  
-  @keyframes float {
-      100% {
-      transform: translateY(20px);
-    }
-  }
-  @media (max-width: 450px) {
-    svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-top: -250px;
-      margin-left: -190px;
-    }
-    .message-box {
-      top: 50%;
-      left: 50%;
-      margin-top: -100px;
-      margin-left: -190px;
-      text-align: center;
-    }
-  }
+    transition: 0.3 ease-in-out;
+    color: white;
+    border: none;
+    text-wrap: nowrap;
+ }
+
+ @font-face {
+    font-family: 'MyCustomFont';
+    src: url('/fonts/TAN_Nimbus/Web/TAN-NIMBUS.woff') format('woff'),
+         url('/fonts/TAN_Nimbus/Web/TAN-NIMBUS.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'logoFont';
+    src: url('/fonts/Signate/signategrotesk-black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 15%;
+
+}
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+}
+
+.home-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.home-content h1{
+    font-size: 8rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+}
+
+.home-content h3{
+    margin: 1rem 0;
+    font-size: 4rem;
+}
+
+.home-content p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.8;
+}
+.home-img{
+    width: 32vw;
+    border-radius: 50%;
+}
