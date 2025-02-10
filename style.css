@@ -367,7 +367,7 @@ section {
 .slides {
   display: flex;
   transform: translateX(0);
-  animation: slide 10s infinite linear;
+  animation: slide 32s infinite linear;
   width: max-content; /* Ensures smooth scrolling */
 }
 
