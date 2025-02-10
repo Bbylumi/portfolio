@@ -1,47 +1,39 @@
-// Framer Motion setup for animations
 document.addEventListener("DOMContentLoaded", () => {
-  const { motion } = window["framer-motion"];
+  const modal = document.getElementById("readMoreModal");
+  const btn = document.querySelector(".btn");
+  const closeBtn = document.querySelector(".close-btn");
 
-  // Portfolio Images Animation
-  document.querySelectorAll(".portfolio-item").forEach((item) => {
-    motion(item, {
-      initial: { opacity: 0, y: 50 },
-      whileInView: { opacity: 1, y: 0 },
-      transition: { duration: 0.6, ease: "easeOut" },
+  if (btn && modal && closeBtn) {
+    // Open Modal
+    btn.addEventListener("click", () => {
+      modal.style.display = "flex";
     });
-  });
 
-  // Smooth Section Transitions
-  document.querySelectorAll("nav a").forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const target = document.querySelector(e.target.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
+    // Close Modal
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    // Close when clicking outside modal
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
       }
     });
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const text = `
-   Hi, I'm Ajibola, a passionate graphic designer dedicated to creating visually'
-   stunning and effective designs. With good number of years experience in the industry, 
-   I've honed my skills in Graphic designing and Video animation . I'm excited to bring my creativity and expertise to your project;`;
-  const typewriterElement = document.getElementById("typewriter-text");
-  const homeButton = document.getElementById("home-button");
-
-  let i = 0;
-
-  function typeWriter() {
-    if (i < text.length) {
-      typewriterElement.textContent += text.charAt(i);
-      i++;
-      setTimeout(typeWriter, 50); // Adjust speed here
-    } else {
-      homeButton.classList.remove("hidden");
-    }
+  } else {
+    console.error("Modal elements not found. Check your HTML structure.");
   }
-
-  typeWriter();
 });
+
+
+
+
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector(".navbar");
+
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle('bx-x')
+  navbar.classList.toggle('active');
+}
+
+
